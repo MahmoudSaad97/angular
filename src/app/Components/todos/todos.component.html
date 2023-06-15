@@ -1,0 +1,22 @@
+<div class="text-center w-50 mx-auto bg-custom my-5 p-4 rounded">
+  <div class="row mt-5 py-2">
+    <div class="col-10">
+      <input type="text" class="form-control" placeholder="Enter todo Task" [(ngModel)]="task" />
+    </div>
+    <div class="col-2">
+      <button class="btn btn-outline-success d-block w-100" (click)="add()">
+        Add
+      </button>
+    </div>
+  </div>
+  <div class="row my-2" *ngFor="let todo of tasks; let i = index">
+    <div class="col-10">
+      <p class="p-1 bg-light rounded">
+        {{todo}}
+      </p>
+    </div>
+    <div class="col-2">
+      <button class="btn btn-outline-danger w-100"(click)="remove(i)">Remove</button>
+    </div>
+  </div>
+</div>

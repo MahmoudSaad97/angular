@@ -1,0 +1,11 @@
+<div class="w-25 mx-auto p-5 bg-light my-5">
+  <select class="form-select fs-5" [(ngModel)]="selectedtrack">
+    <option value="">Select a track</option>
+    <option *ngFor="let track of tracks" [value]="track.name">{{ track.name }}</option>
+  </select>
+  
+  <div>
+  <p *ngIf="selectedtrack" class="text-success fw-bold fs-3">{{selectedtrack}} Track Availabile In: </p>
+  <p *ngFor="let city of getcities(selectedtrack)" class="text-info fw-bold fs-3 text-center p-2">{{city}}</p>
+  </div>
+</div>

@@ -1,0 +1,62 @@
+ul li a {
+  color: white !important;
+  transition: 0.5s;
+  position: relative;
+}
+
+.navbar .nav-item .nav-link:hover::before {
+  background-color:goldenrod;
+  width:100%;
+}
+.navbar .nav-item .nav-link:hover::after {
+  background-color:goldenrod;
+  width:100%;
+}
+
+
+.navbar .nav-item .nav-link::before {
+  content: "";
+  position: absolute;
+  width:0;
+  height:2px;
+  bottom: 0;
+  left:0;
+  background-color:goldenrod;
+  transition: 0.5s;
+}
+.navbar .nav-item .nav-link::after {
+  content: "";
+  position: absolute;
+  width:0;
+  height:2px;
+  top: 0;
+  right:0;
+  background-color:goldenrod;
+  transition: 0.5s;
+}
+
+.navbar .navbar-toggler {
+  color: transparent;
+}
+
+.fa-bars {
+  color: white;
+}
+
+.text-gold-main {
+  color: rgb(185, 143, 36);
+  transition: 0.3s;
+}
+
+.text-gold-main:hover {
+  color: rgb(141, 133, 111);
+}
+
+.text-gold {
+  color: rgb(141, 133, 111);
+  transition: 0.3s;
+}
+
+.text-gold:hover {
+  color: rgb(185, 143, 36);
+}

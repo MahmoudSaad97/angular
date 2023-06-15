@@ -1,0 +1,6 @@
+img{
+  width:100%;
+  margin:auto;
+  height:500px;
+  object-fit: cover;
+}
