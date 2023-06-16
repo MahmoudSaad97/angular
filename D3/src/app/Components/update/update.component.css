@@ -1,0 +1,3 @@
+.parent{
+  min-height: calc(100% - 20em);
+}

@@ -1,0 +1,112 @@
+/* You can add global styles to this file, and also import other style files */
+:root {
+  --bg-section: #ececec;
+  --seconday-bg: #212529;
+  --logo-bg: goldenrod;
+  --main-transition: 0.5s
+}
+
+/* Start Body Scroll Bar */
+body {
+  overflow-x: hidden;
+}
+
+body::-webkit-scrollbar {
+  width: 9px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: var(--logo-bg);
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  background: var(--seconday-bg);
+
+}
+
+/* End Body Scroll Bar */
+
+.main-heading {
+  text-align: center;
+  font-size: 30px;
+  letter-spacing: 0.8px;
+  border: 2px solid;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 10px auto 70px;
+  padding: 10px 20px;
+  position: relative;
+  z-index: 1;
+  text-transform: uppercase;
+  transition: var(--main-transition);
+}
+
+.main-heading::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--logo-bg);
+  position: absolute;
+  left: -30px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.main-heading::after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--logo-bg);
+  position: absolute;
+  right: -30px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.main-heading:hover {
+  color: white;
+  border: 2px solid white;
+  transition-delay: 0.5s;
+}
+
+.main-heading:hover::before {
+  animation: right-move 0.5s linear forwards;
+}
+
+.main-heading:hover::after {
+  animation: left-move 0.5s linear forwards;
+}
+
+@keyframes right-move {
+  50% {
+    width: 15px;
+    left: -15px;
+    border-radius: 0;
+  }
+
+  100% {
+    width: 50%;
+    height: 100%;
+    border-radius: 0;
+    left: 0;
+    z-index: -1;
+  }
+}
+
+@keyframes left-move {
+  50% {
+    width: 15px;
+    right: -15px;
+    border-radius: 0;
+  }
+
+  100% {
+    width: calc(50% + 1px);
+    height: 100%;
+    border-radius: 0;
+    right: 0;
+    z-index: -1;
+  }
+}

@@ -1,0 +1,5 @@
+.bg-custom{
+  background-color: #ececec;
+  box-shadow: 2px 2px 1px 0px #777;
+  min-height: (100% - 19em);
+}
