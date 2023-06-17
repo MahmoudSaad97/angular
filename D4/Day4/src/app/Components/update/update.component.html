@@ -1,0 +1,49 @@
+<div class="main-container">
+  <div class="container bg-light p-5 w-50 rounded">
+    <form [formGroup]="productform" (submit)="formActivate($event)">
+      <div class="mb-3">
+        <label for="name" class="form-label">ProductName</label>
+        <input type="text" class="form-control" id="name" placeholder="Enter Product Name"
+          aria-describedby="nameerror" formControlName="name" />
+        <ng-container *ngIf="getName.touched">
+          <div *ngIf="getName.hasError('required')" id="nameerror" class="form-text text-danger">
+            Product Name is Required
+          </div>
+          <div *ngIf="getName.hasError('minlength')" id="nameerror" class="form-text text-danger">
+            Product Name must be More than 5 characters
+          </div>
+        </ng-container>
+      </div>
+      <div class="mb-3">
+        <label for="price" class="form-label">Price</label>
+        <input type="number" placeholder="Enter Product Price" class="form-control" id="price"
+          formControlName="price" />
+        <ng-container *ngIf="getPrice.touched">
+          <div *ngIf="getPrice.hasError('required')" id="priceerror" class="form-text text-danger">
+            Price Is required
+          </div>
+          <div *ngIf="getPrice.hasError('min')" id="priceerror" class="form-text text-danger">
+            Price Should be more than 100$
+          </div>
+        </ng-container>
+      </div>
+      <div class="mb-3">
+        <label for="quantity" class="form-label">Qunatity</label>
+        <input type="number" placeholder="Enter Product Qunatity" class="form-control" id="quantity"
+          formControlName="quantity" />
+        <ng-container *ngIf="getQuantity.touched">
+          <div *ngIf="getQuantity.hasError('required')" id="quantityerror" class="form-text text-danger">
+            Qunatity Is required
+          </div>
+          <div *ngIf="getQuantity.hasError('min')" id="priceerror" class="form-text text-danger">
+            Quantity Must be More Than 5 pieces
+          </div>
+        </ng-container>
+        </div>
+  
+      <button type="submit" class="btn btn-dark mt-3">
+        {{ id == 0 ? "Add Product" : "Edit Product" }}
+      </button>
+    </form>
+  </div>
+</div>
